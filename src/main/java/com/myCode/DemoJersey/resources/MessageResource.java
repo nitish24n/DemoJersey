@@ -24,14 +24,14 @@ public class MessageResource {
 //	}
 	
 	@GET
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public List<Employee> getMessages() {
 		return empService.getAllEmployees();
 	}
 	
 	@GET
 	@Path("/{id}")
-	@Produces(MediaType.APPLICATION_XML)
+	@Produces(MediaType.APPLICATION_JSON)
 	public Employee test(@PathParam("id") int id) {
 		return empService.getEmployee(id);
 	}
