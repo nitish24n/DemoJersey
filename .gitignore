@@ -2,3 +2,4 @@
 *.jar
 *.class
 target/m2e-wtp/web-resources/META-INF/maven/com.myCode/DemoJersey/pom.properties
+*.class
