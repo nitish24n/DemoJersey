@@ -5,9 +5,10 @@ import java.util.List;
 import java.util.Map;
 
 import com.myCode.DemoJersey.database.DatabaseClass;
+import com.myCode.DemoJersey.exception.NoDataFoundException;
 import com.myCode.DemoJersey.model.Employee;
 
-public class EmployeeService {
+public class EmployeeService{
 	private Map<Integer,Employee> employees = DatabaseClass.getAllEmployees();
 	/*
 	public List<Employee> getAllEmployees(){
@@ -31,7 +32,12 @@ public class EmployeeService {
 	}
 	
 	public Employee getEmployee(int id) {
-		return employees.get(id);
+		Employee emp = employees.get(id);
+		if(emp == null) {
+			throw new NoDataFoundException("Employee record with id "+id+" is not found.");
+		}else {
+		return emp;
+		}
 	}
 	
 	public Employee addEmployee(Employee emp) {
