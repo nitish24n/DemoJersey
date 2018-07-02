@@ -6,18 +6,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ErrorMessage {
 	
 	private String errorMessage;
-	private String errorCode;
-	private String Documentation;
+	private int  errorCode;
 	
 	public ErrorMessage() {
 		
 	}
 	
-	public ErrorMessage(String errorMessage, String errorCode, String documentation) {
+	public ErrorMessage(String errorMessage, int  errorCode) {
 		super();
 		this.errorMessage = errorMessage;
 		this.errorCode = errorCode;
-		Documentation = documentation;
 	}
 	
 	public String getErrorMessage() {
@@ -26,17 +24,11 @@ public class ErrorMessage {
 	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
-	public String getErrorCode() {
+	public int getErrorCode() {
 		return errorCode;
 	}
-	public void setErrorCode(String errorCode) {
+	public void setErrorCode(int errorCode) {
 		this.errorCode = errorCode;
-	}
-	public String getDocumentation() {
-		return Documentation;
-	}
-	public void setDocumentation(String documentation) {
-		Documentation = documentation;
 	}
 
 }
